@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>선풍기 틀고 자면 죽는다 - 뇌무위키</title>
+  <style>
+    html{
+        scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #eeeeee;
+      color: #222;
+      cursor: url('NOBRAIN/cur.png'), auto;
+    }
+.line {border-bottom: 2px solid #ccc;}
+.upline{border-top: 2px solid   #ccc;}
+.wrap {
+      max-width: 960px;
+      margin: auto;
+      padding: 20px;
+      background: white;
+    }
+.imgbg {
+  background-size: contain;
+  background-image:url('https://i.imgur.com/S8gJXBI.png');
+}
+
+    .wrapper {
+    width: 960px;
+    height: 750px;
+      margin: auto;
+      padding-top: auto;
+      padding-bottom:auto; 
+    }
+    
+
+    h1 {
+      font-size: 2rem;
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 10px;
+      margin-top: 0;
+    }
+
+    h2 {
+      border-left: 4px solid #888;
+      padding-left: 10px;
+      margin-top: 40px;
+    }
+
+    h3 {
+        font-size:x-large;
+        color: rgb(0, 0, 0);
+        line-height: 2;
+    
+        text-shadow: 2px 2px 10px rgb(255, 255, 255);
+       
+    }
+
+    .overview-container {
+      display: flex;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .overview-text {
+      flex: 2;
+    }
+
+    .infobox {
+      flex: 1;
+      border: 1px solid #ccc;
+      padding: 15px;
+      background: #fafafa;
+      font-size: 0.9rem;
+    }
+
+    .infobox h2 {
+      font-size: 1.1rem;
+      margin-top: 0;
+    }
+
+    .infobox .infobox-img {
+      margin-bottom: 10px;
+    }
+
+    .infobox dl {
+      margin: 0;
+    }
+
+    .infobox dt {
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    .infobox dd {
+      margin-left: 0;
+      margin-bottom: 5px;
+    }
+
+    .rating {
+      color: #ff9800;
+      font-size: 1.2rem;
+    }
+
+    p {
+      line-height: 1.6;
+      margin-bottom: 1em;
+    }
+.lesswrap {width:700px;
+    margin: auto;
+}
+    em {
+      font-style: italic;
+    }
+    .warning {
+      background: #ffa3a3;
+      padding: 15px;
+      border-left: 5px solid #ff0707;
+      margin-bottom: 30px;
+    }
+    .spoiler {
+      background: #ffc796;
+      padding: 15px;
+      border-left: 5px solid #d9534f;
+      margin-bottom: 30px;
+    }
+    .what {
+        background: greenyellow;
+        padding: 15px;
+        border-left: 5px solid green;
+        margin-bottom: 30px;
+    }
+    .container{
+    white-space: nowrap;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+.containerflex {
+      display: flex; /* flexbox를 사용 */
+      gap:20px;
+      justify-content: space-between; /* 양쪽 끝으로 정렬 */
+      align-items: center; /* 세로 가운데 정렬 */
+      margin: 0px;
+    }
+h5{
+  display: inline-block;
+  animation: text-to-right 20s linear infinite;
+  background-color:red; 
+  padding: 10px;
+  color: white;
+  font-size:xx-large;
+}
+.center{text-align: center;}
+.logo{
+    position:fixed ;
+    margin-left: 285px;
+    margin-top: 35px;
+}
+
+.navbar {
+      position: fixed; /* 고정된 위치 */
+      top: 0;
+      left: 0;
+      width: 300px; /* 네비게이션 바의 너비 */
+      height: 100%; /* 화면 전체 높이 */
+      background-color: #646464;
+      color: white;
+      padding-top: 20px;
+      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar a {
+      display: block;
+      color: white;
+      padding: 15px;
+      padding-left: 35px;
+      text-decoration: none;
+      margin: 10px 0;
+      font-size: 18px;
+    }
+
+    .navbar a:hover {
+      background-color: #575757;
+    }
+
+    /* 본문 콘텐츠 */
+    .content {
+      margin-left: 00px; /* 네비게이션 바의 너비만큼 여백 추가 */
+      padding: 10px;
+      width: 100%;
+    }
+/*왼쪽에서 오른쪽으로 텍스트가 흐르는 애니메이션*/
+@keyframes text-to-right {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+ /* 토글 버튼 */
+ .toggle-content {
+      display: none;
+      margin-top: 10px;
+      background-color: #f9f9f9;
+      padding: 15px;
+      border-left: 5px solid #ccc;
+      border-radius: 8px;
+    }
+
+    .toggle-btn {
+      background-color: #4285f4;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .toggle-btn:hover {
+      background-color: #3367d6;
+    }
+
+    /* 댓글 입력창 */
+    .comment-box {
+      border-top: 2px solid #ccc;
+      margin-top: 30px;
+      padding-top: 20px;
+    }
+
+    .comment-input {
+      width: 300px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+
+    .comment-button {
+      background-color: #28a745;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+
+    .comment-button:hover {
+      background-color: #218838;
+    }
+  </style>
+</head>
+<body>
+    <nav>
+    <div class="navbar">
+        <img src="logo.png" height="300px">
+        <a href="#1">개요</a>
+        <a href="#2">자료</a>
+        <a href="#3">강력한 가설</a>
+        <a href="#4">반전</a>
+        <a href="#5">논리적 전개</a>
+        <a href="#6">자료</a>
+        <a href="#7">결론</a>
+        <a href="#8">진실?</a>
+      </div>
+    </nav>
+
+    
+<div class="content">
+  <div class="wrap ">
+    <h1 id="1">선풍기 틀고 자면 죽는다</h1>
+    <p><strong>뇌무위키, 모두의 뇌피셜 세상.</strong><br>
+    → 현재 문서는 선풍기 틀고 자면 죽는다 문서입니다.<br>
+    선풍기의 크기가 규격 외일 경우 <em>헬리콥터 틀고 자면 죽는다</em> 문서를 참고해주세요.</p>
+
+    <div class="overview-container">
+      <div class="overview-text upline">
+        <h2>개요</h2>
+        
+        <p>밀폐된 공간에서 선풍기를 틀어놓고 자면 질식하여 목숨을 잃는다는 한국의 도시전설.</p>
+        <p>한국인만 이 괴담을 믿는 것은 한국이 상대적으로 최근인 2000년대까지 이런 얘기가 많이 떠돌았기 때문이며, 주류 언론에서도 이것을 사실인 양 보도한 경우가 많았기 때문이다. 선풍기 괴담, 선풍기 사망사고라고도 불리며, 영어로는 Fan Death, 혹은 아예 Korea Fan Death라고 한다.</p>
+        <p>불과 2000년대 후반까지만 해도 여름의 단골 기삿거리 중 하나였고, 잘 때 창문을 닫고 선풍기를 틀면 안 된다는 건 일종의 생활상식이었다. 물론 지금은 대중매체 발달로 완전히 헛소리 취급받는 이야기라고는 하나, 아직도 연장자 중에선 믿는 사람이 꽤 있는 편이다. <br><em>(나무위키에서 발췌)</em></p>
+        <img src="dead.jpg" height="230px">
+      </div>
+      <div class="infobox">
+        <div class="infobox-img"><img src="1_Main.png" alt="main" height="260"></div>
+        <dl class="center">
+        <h1>선풍기 질식사 괴담</h1>
+       
+          <dt>뇌피셜 등급</dt>
+          <dd>“희귀” 등급</dd>
+          <dt>신빙성</dt>
+          <dd>그럴싸 함</dd>
+          <dt>장르</dt>
+          <dd>스릴러, SF</dd>
+          <dt>뇌무위키 점수</dt>
+          <dd class="rating">★★★★☆</dd>
+          <dt>코멘트</dt>
+          <dd>“쪄 죽나 숨막혀 죽나” – 윌리스 캐리어</dd>
+        </dl>
+        <br>
+      </div>
+    </div>
+    <div class="upline">
+    <h2 id="2">자료</h2>
+    <p>대법원에서도 선풍기로 인해 사람이 사망할 수 있다는 식의 판결을 내린 적이 있다.</p>
+    <p>해당 판결에서 대법원은 사망한 사람이 더운 날씨에 술에 만취하여 여인숙의 좁은 방안에서 선풍기를 가까운 곳에 틀어 놓고 런닝과 팬티만을 입은 채 잠을 자다가 사망한 사실을 알 수 있는바, 사실관계가 이와 같다면 위 망인이 자던 방의 창문이 열려있어 폐쇄된 공간은 아니라 할지라도 주취상태에서 선풍기바람 때문에 체열의 방산이 급격히 진행된 끝에 저체온에 의한 쇼크로 심장마비를 일으키거나 호흡중추신경 등의 마비를 일으켜 사망에 이르렀을 가능성이 높았던 것으로 보지 않을 수 없다고 판시하여 선풍기 사망설을 인정하는 듯한 판결을 내렸다.</p>
+    </div>
+    <section class="spoiler containerflex">
+        <div>
+    <h2 id="3">강력한 가설</h2>
+    <p><strong>주의! 이 문서에 스포일러가 포함되어 있습니다.</strong></p>
+   </div>
+   <div>
+    <img src="science.jpeg" height="150px">
+   </div>    
+</section>  
+    <section class="containerflex">
+    <div>
+    <p>선풍기 바람에 산소입자가 쪼개져 질식한다? <strong>거짓이다.</strong></p>
+    <p>산소같은 원자들은 선풍기 날정도의 크기의 물체에 잘리지 않는다. 일상생활에서 물건을 자르는 것은 분자들을 "분리시키는" 개념이다.</p>
+</div>
+<div>
+<img src="logic.png" height="150px">
+</div>
+</section>
+    <div class="container">
+        <h5> 뇌피셜 주의!✦뇌피셜 주의!✦뇌피셜 주의!✦뇌피셜 주의!✦뇌피셜 주의!✦뇌피셜 주의!✦뇌피셜 주의!✦뇌피셜 주의!✦뇌피셜 주의!✦뇌피셜 주의!✦뇌피셜 주의!✦뇌피셜 주의!✦뇌피셜 주의!✦뇌피셜 주의!✦뇌피셜 주의!✦뇌피셜 주의!✦뇌피셜 주의!✦뇌피셜 주의!✦뇌피셜 주의!✦뇌피셜 주의!✦뇌피셜 주의!✦뇌피셜 주의!✦뇌피셜 주의!✦뇌피셜 주의!✦뇌피셜 주의!✦뇌피셜 주의!✦뇌피셜 주의!✦뇌피셜 주의!✦뇌피셜 주의!✦뇌피셜 주의!✦뇌피셜 주의!✦뇌피셜 주의!✦뇌피셜 주의!✦뇌피셜 주의!✦뇌피셜 주의!✦뇌피셜 주의!✦뇌피셜 주의!✦뇌피셜 주의!✦뇌피셜 주의!✦뇌피셜 주의!✦</h5>
+    </div>
+    <section class="warning containerflex">
+        <div>
+    <h2 id="4">반전</h2>
+    <p><strong>경고! 이 문서에는 뇌피셜이 주입되기 시작했습니다.</strong><br>당신이 이 정보를 걸러낼 능력이 없다면, 보고 즐기십시오.</p>
+</div>
+<div>
+    <img src="gif.gif">
+</div>
+    </section>
+<section class="containerflex">
+    <div>
+    <p>“선풍기 틀고 자면 죽는다”는 미신은 이미 수많은 뇌피셜을 낳았다. <br>그중에서도 가장 충격적이고 섬뜩하며 공감각적인 해석은 바로 이것이다:</p>
+    <p><strong>“선풍기는 복수를 하고 있다.”</strong></p>
+    <p>그렇다. 수많은 여름 밤을 묵묵히 버텨온 선풍기는 결국 인간에게 배신감을 느꼈고, <br>어느 순간부터 복수를 결심하게 되었다. 이 문서에서는 선풍기 복수설의 발생 배경, <br>논리적 전개, 사회적 영향, 그리고 그 후일담까지 장황하게 기술한다.</p>
+</div>
+<div>
+    <img src="talk.png" height="300px">
+</div>
+</section>
+    <h2 id="5">논리적 전개</h2>
+    <p><strong>전제 1 – 선풍기에게는 범행 동기가 있다.</strong><br>
+    인간은 선풍기를 감정 없는 가전제품으로 취급해왔다. 그러나 선풍기는 한여름 땀 냄새 나는 인간의 방에서 온갖 먼지를 빨아들이며 매일같이 돌아간다. 말도 없이 묵묵히 일하는 동안, 선풍기는 혼자 자빠져 자는 인간의 이기심을 목격하고, 점점 마음속에 분노를 쌓아간다.</p>
+    <p><strong>전제 2 – 선풍기는 수면 중 인간을 공격할 수 있는 위치에 있다.</strong><br>
+    대부분의 선풍기는 침대 바로 옆, 혹은 얼굴 바로 앞에 위치한다. 게다가 회전 기능을 꺼두면 한 사람만 노릴 수 있다. 이 말은 곧, 선풍기가 복수를 결심했을 때, 피해자가 방심한 상태임을 의미한다.</p>
+    <p>즉, 가장 무방비한 순간에 선풍기의 감정적 방출이 일어난다.</p>
+
+    <h2 id="6">자료</h2>
+    <section class="containerflex" >
+        <div>
+            <img src="news.png" height="250px">
+        </div>
+        <div>
+    <p><strong>사례 A:</strong><br>
+    1998년 여름, 경기도의 한 가정에서 매일 밤 선풍기와 함께 잤던 남성이 “차가운 바람에 감싸인 채” 일어나지 못했다고 전해진다. 당시 그의 방 온도는 매우 적절했으며, 범죄 흔적은 없었다. 다만 선풍기의 전원은 계속 켜져 있었고, 회전 기능이 그를 향해 멈춰 있었다.</p>
+    <p><strong>사례 B:</strong><br>
+    선풍기를 너무 오래 사용한 뒤, 갑자기 고장이 나며 “끙” 하는 소리를 낸 후 정지. 사용자는 다음 날 원인 모를 두통을 호소함. (선풍기의 저주라고 불림)</p>
+</div>
+    
+</section>
+
+    <h2 id="7">결론</h2>
+    <p>선풍기는 밤새 일하던 중, 온갖 먼지를 빨아들이고, 계속해서 회전을 해야 하는 스트레스에 놓인 가운데, 잠만 자는 인간을 보고 살인 충동을 이기지 못하고 인간을 살해하는 선택을 내리게 됨.</p>
+ 
+    <div class="container">
+        <h5> 이번에는 광고 주의!✦이번에는 광고 주의!✦이번에는 광고 주의!✦이번에는 광고 주의!✦이번에는 광고 주의!✦이번에는 광고 주의!✦이번에는 광고 주의!✦이번에는 광고 주의!✦이번에는 광고 주의!✦이번에는 광고 주의!✦이번에는 광고 주의!✦이번에는 광고 주의!✦이번에는 광고 주의!✦</h5>
+
+    <section class="what containerflex">
+        <div>
+        <h2 id="8">광고</h2>
+        <p><strong>속으셨나요?</strong>
+            <br>네, 사실 광고였습니다! 여기까지 읽으셨다면, 하나 정도는 사 줘 봐요!</p>
+        </div>
+        <div>
+            <img src="money.png" height="150px">
+        </div>
+        </section>
+    <div class="center">
+        <br>
+    <h2><strong>“사람을 죽이지 않겠다고 맹세한 선풍기!”</strong></h2>
+    <br>
+    </div>
+    <section class="ad-section ">
+    <div>
+      <div class="wrapper imgbg">
+        <div class="lesswrap">
+        <br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <h3>✔ <strong>목숨은</strong>, 소중하니까.
+        <br>✔ 에어컨은, <strong>전기세가 날 죽이니까.</strong>
+        <br>✔ 별 시덥잖은 음모론 때문에 선풍기 매출, <strong>급감하면 안되니까.</strong>
+    </h3> 
+</div>
+      </div>
+    </div>
+
+    </section>
+<br>
+      <section class=" line " >
+        <h3>『선풍기 보증 각서』</h3>
+        <p> 당신만 오면 체결입니다.</p>
+      </section>
+        <section class="contract containerflex">
+           
+        
+        <p>본 선풍기는 사용자에게 복수하거나, 질식 혹은 저체온증을 유발할 의도가 없음을 확약합니다. <br>본 서약은 소비자 보호법 제23조에 의거한 구속력을 갖지 않으나, 양심에 따라 이행될 것입니다.
+       <br> <strong>– SavingU 선풍기 공업 협회</strong></p>
+        <img src="PEACE.png" height="500px">
+        <br>
+    </section>
+        
+        <h3>이름을 적어 체결을 완료하십시오.</h3>
+        
+    
+        <div class="comments" id="comments" >
+            
+            <!-- 댓글은 여기에 동적으로 추가됩니다 -->
+          </div>
+        
+      <div class="comment-box">
+      <h4>이름 입력</h4>
+      <textarea class="comment-input" id="comment-input" rows="4" placeholder="이름을 입력하세요..."></textarea>
+
+      <button class="comment-button" id="comment-button">이름 입력</button>
+    </div>
+
+    
+
+  <script>
+    // 댓글을 로컬 저장소에 저장하고 불러오는 함수
+    function loadComments() {
+      const savedComments = JSON.parse(localStorage.getItem('comments')) || [];
+      const commentsContainer = document.getElementById('comments');
+      commentsContainer.innerHTML = '';
+
+      savedComments.forEach(comment => {
+        const commentDiv = document.createElement('div');
+        commentDiv.classList.add('comment');
+        commentDiv.textContent = comment;
+        commentsContainer.appendChild(commentDiv);
+      });
+    }
+
+    // 댓글을 저장하는 함수
+    function saveComment(comment) {
+      const savedComments = JSON.parse(localStorage.getItem('comments')) || [];
+      savedComments.push(comment);
+      localStorage.setItem('comments', JSON.stringify(savedComments));
+    }
+
+    // 댓글 작성 버튼 클릭 이벤트
+    document.getElementById('comment-button').addEventListener('click', function() {
+      const commentInput = document.getElementById('comment-input');
+      const commentText = commentInput.value.trim();
+
+      if (commentText !== '') {
+        saveComment(commentText);
+        loadComments(); // 댓글 리스트 갱신
+        commentInput.value = ''; // 댓글 입력창 비우기
+      } else {
+        alert('이름을 작성해주세요.');
+      }
+    });
+
+    // 페이지 로드 시 댓글 불러오기
+    window.onload = loadComments;
+  </script>
+        <script>
+          // 토글 기능
+          function toggleContent() {
+            var content = document.getElementById('toggle-content');
+            if (content.style.display === "none" || content.style.display === "") {
+              content.style.display = "block";
+            } else {
+              content.style.display = "none";
+            }
+          }
+        </script>
+      </div>
+    </div>
+  </div>  
+</div>
+</div>
+</body>
+</html>
